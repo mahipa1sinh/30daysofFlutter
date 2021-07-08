@@ -1,4 +1,4 @@
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +17,6 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                // decoration: BoxDecoration(
-                //   color: Colors.teal[700],
-                // ),
                 accountName: Text("Mahipalsinh"),
                 accountEmail: Text("nakummahipalsinh@gmail.com"),
                 currentAccountPicture: CircleAvatar(
