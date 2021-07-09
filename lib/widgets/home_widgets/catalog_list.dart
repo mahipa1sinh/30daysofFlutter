@@ -66,10 +66,10 @@ class CatalogItem extends StatelessWidget {
                           MaterialStateProperty.all(MyTheme.darkBluishColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
                     ),
-                    child: "Buy".text.make(),
+                    child: "BUY".text.make(),
                   )
                 ],
-              ).pOnly(right: 8.0)
+              ).pOnly(right: 12.0)
             ],
           ))
         ],
