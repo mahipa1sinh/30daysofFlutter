@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
 // ignore: unused_import
 import 'package:flutter_catalog/widgets/themes.dart';
@@ -29,6 +30,7 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
@@ -57,25 +59,25 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartList extends StatelessWidget {}
-
-final _cart = CartModel();
-@override
-Widget build(BuildContext context) {
-  return _cart.items.isEmpty
-      ? "Nothing To Show".text.xl3.makeCentered()
-      : ListView.builder(
-          itemCount: _cart.items.length,
-          itemBuilder: (context, index) => ListTile(
-            leading: Icon(Icons.done),
-            trailing: IconButton(
-              icon: Icon(Icons.remove_circle_outline),
-              onPressed: () {
-                _cart.remove(_cart.items[index]);
-                //setState(() {});
-              },
+class _CartList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
+    return _cart.items.isEmpty
+        ? "Nothing To Show".text.xl3.makeCentered()
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () {
+                  _cart.remove(_cart.items[index]);
+                  //setState(() {});
+                },
+              ),
+              title: _cart.items[index].name.text.make(),
             ),
-            title: _cart.items[index].name.text.make(),
-          ),
-        );
+          );
+  }
 }
