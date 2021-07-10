@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routs.dart';
-// ignore: unused_import
-import 'package:flutter_catalog/widgets/themes.dart';
-// ignore: unused_import
-import 'package:flutter_catalog/models/catalog.dart';
-// ignore: unused_import
-import 'package:flutter_catalog/pages/home_detail_page.dart';
-// ignore: unused_import
 import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {

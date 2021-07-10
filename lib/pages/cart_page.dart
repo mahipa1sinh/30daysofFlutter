@@ -57,30 +57,25 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartList extends StatefulWidget {
-  @override
-  __CartListState createState() => __CartListState();
-}
+class _CartList extends StatelessWidget {}
 
-class __CartListState extends State<_CartList> {
-  final _cart = CartModel();
-  @override
-  Widget build(BuildContext context) {
-    return _cart.items.isEmpty
-        ? "Nothing To Show".text.xl3.makeCentered()
-        : ListView.builder(
-            itemCount: _cart.items.length,
-            itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
-              trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _cart.remove(_cart.items[index]);
-                  setState(() {});
-                },
-              ),
-              title: _cart.items[index].name.text.make(),
+final _cart = CartModel();
+@override
+Widget build(BuildContext context) {
+  return _cart.items.isEmpty
+      ? "Nothing To Show".text.xl3.makeCentered()
+      : ListView.builder(
+          itemCount: _cart.items.length,
+          itemBuilder: (context, index) => ListTile(
+            leading: Icon(Icons.done),
+            trailing: IconButton(
+              icon: Icon(Icons.remove_circle_outline),
+              onPressed: () {
+                _cart.remove(_cart.items[index]);
+                //setState(() {});
+              },
             ),
-          );
-  }
+            title: _cart.items[index].name.text.make(),
+          ),
+        );
 }
