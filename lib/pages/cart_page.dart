@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
-// ignore: unused_import
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartPage extends StatelessWidget {
@@ -36,16 +34,21 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          VxBuilder(
-            mutations: {RemoveMutation},
-            builder: (context, _) {
-              return "\$${_cart.totalPrice}"
-                  .text
-                  .xl5
-                  .color(context.theme.accentColor)
-                  .make();
-            },
-          ),
+          // VxBuilder(
+          //   mutations: {RemoveMutation},
+          //   builder: (context, _) {
+          //     return "\$${_cart.totalPrice}"
+          //         .text
+          //         .xl5
+          //         .color(context.theme.accentColor)
+          //         .make();
+          //   },
+          // ),
+          "\$${_cart.totalPrice}"
+              .text
+              .xl5
+              .color(context.theme.accentColor)
+              .make(),
           30.widthBox,
           ElevatedButton(
             onPressed: () {
