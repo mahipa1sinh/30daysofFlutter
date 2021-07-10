@@ -5,8 +5,6 @@ import 'dart:convert';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routs.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
-// ignore: unused_import
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
 
